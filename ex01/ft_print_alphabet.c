@@ -6,7 +6,7 @@
 /*   By: liulm <liulm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 13:48:25 by liulm             #+#    #+#             */
-/*   Updated: 2024/07/16 14:06:31 by liulm            ###   ########.fr       */
+/*   Updated: 2024/07/16 14:20:57 by liulm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,9 @@
 void	ft_print_alphabet(void)
 {
 	write(1, "abcdefghijklmnopqrstuvwxyz", 26);
+}
+
+int	main()
+{
+	ft_print_alphabet();
 }

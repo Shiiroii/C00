@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lionelulm <lionelulm@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/17 15:20:42 by liulm             #+#    #+#             */
-/*   Updated: 2024/07/23 23:25:27 by lionelulm        ###   ########.fr       */
+/*   Created: 2024/07/23 23:49:25 by lionelulm         #+#    #+#             */
+/*   Updated: 2024/07/23 23:53:02 by lionelulm        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,52 +17,43 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	write_num(int	n)
+void	ft_putnbr(int nb)
 {
 	int	i;
-	int	j;
 
-	if (n > 9)
+	i = 0;
+	if (nb == -2147483648)
 	{
-		i = n / 10;
-		j = n % 10;
-		ft_putchar(i + '0');
-		ft_putchar(j + '0');
+		write(1, "-2147483648", 11);
 	}
 	else
 	{
-		ft_putchar('0');
-		ft_putchar(n + '0');
-	}
-}
-
-void	ft_print_comb2(void)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i <= 98)
-	{
-		j = i + 1;
-		while (j <= 99)
+		if (nb < 0)
 		{
-			write_num(i);
-			ft_putchar(' ');
-			write_num(j);
-			if (i < 98 || j < 99)
-			{
-				ft_putchar(',');
-				ft_putchar(' ');
-			}
-			j++;
+			ft_putchar('-');
+			nb = -nb;
 		}
-		i++;
+		if (nb > 9)
+		{
+			ft_putnbr(nb / 10);
+		}
+		ft_putchar(nb % 10 + '0');
 	}
 }
 
+// --------------------------------------------
 
 int	main()
 {
-	ft_print_comb2();
+	ft_putnbr(0);
+	ft_putchar('\n');
+	ft_putnbr(1);
+	ft_putchar('\n');
+	ft_putnbr(42);
+	ft_putchar('\n');
+	ft_putnbr(-42);
+	ft_putchar('\n');
+	ft_putnbr(-2147483648);
+	ft_putchar('\n');
+	ft_putnbr(2147483647);
 }

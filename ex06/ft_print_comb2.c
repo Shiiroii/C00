@@ -17,7 +17,7 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	write_num(int	n)
+void	write_num(int n)
 {
 	int	i;
 	int	j;
